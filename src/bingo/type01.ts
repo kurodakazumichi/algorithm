@@ -1,6 +1,8 @@
 /**
  * 2次元配列で作ったビンゴクラス
  */
+namespace BingoType01 {
+
 class Bingo 
 {
   /**
@@ -142,7 +144,7 @@ class Bingo
     if (!this.isEnabled) return;
 
     // 数字あるかな？
-    const pos = this.getPosByNumber(num);
+    const pos = this.findPosByNumber(num);
 
     // 合ったら穴開ける
     if (pos != null) {
@@ -156,7 +158,7 @@ class Bingo
   /**
    * ビンゴの中に指定した数値があれば、その場所を返す。無ければnullを返す。
    */
-  public getPosByNumber(num:number) 
+  private findPosByNumber(num:number) 
   {
     if (!this.isEnabled) return null;
 
@@ -302,3 +304,5 @@ bingo.drawHoles();
 
 // クリア判定
 console.log(`isClear = ${bingo.isClear}`);
+
+}
