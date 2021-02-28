@@ -3,6 +3,14 @@
  */
 namespace BingoType01 {
 
+/**
+ * 座標を表すインターフェース
+ */
+interface ICoord {
+  x:number;
+  y:number;
+}
+
 class Bingo 
 {
   /**
@@ -35,7 +43,8 @@ class Bingo
   /**
    * ビンゴの状態をリセットする
    */
-  private reset() {
+  private reset() :void
+  {
     this.isEnabled = false;
     this.bingo = [];
     this.holes = [];
@@ -46,7 +55,7 @@ class Bingo
    * ビンゴデータの大きさや、ビンゴのデータを設定する
    * 指定されたデータがおかしかったらデータは設定されない。
    */
-  public setup(size:number, maybeBingoData:number[][]) 
+  public setup(size:number, maybeBingoData:number[][]) :void
   {
     this.reset();
 
@@ -72,9 +81,6 @@ class Bingo
     // ビンゴデータを適用
     for(let y = 0; y < size; ++y) 
     {
-      this.bingo[y] = new Array(size);
-      this.holes[y] = new Array(size);
-
       for(let x = 0; x < size; ++x) 
       {
         this.bingo[y][x] = maybeBingoData[y][x];
@@ -88,7 +94,7 @@ class Bingo
    * ビンゴのサイズが0x0とかありえないのでサイズのチェックをして
    * ビンゴデータが指定されたサイズと違っててもおかしいのでそれをチェックする
    */
-  private validateData(size:number, maybeBingoData:number[][]) 
+  private validateData(size:number, maybeBingoData:number[][]) :boolean
   {
     if (size <= 0) {
       console.log("ビンゴのサイズは1x1以上にする必要があります。");
@@ -113,7 +119,7 @@ class Bingo
   /**
    * ビンゴデータの表示(デバッグ用)
    */
-  public drawBingo() 
+  public drawBingo() :void
   {
     if (!this.isEnabled) return;
 
@@ -125,7 +131,7 @@ class Bingo
   /**
    * 穴データの表示(デバッグ用)
    */
-  public drawHoles() 
+  public drawHoles() :void
   {
     if (!this.isEnabled) return;
 
@@ -139,9 +145,9 @@ class Bingo
    * 数値を指定して、その数値があれば穴を開けるし、無ければ開けない。
    * 穴があいたらtrue、あかなければfalseを返す。
    */
-  public tryOpen(num:number) 
+  public tryOpen(num:number) :boolean
   {
-    if (!this.isEnabled) return;
+    if (!this.isEnabled) return false;
 
     // 数字あるかな？
     const pos = this.findPosByNumber(num);
@@ -158,7 +164,7 @@ class Bingo
   /**
    * ビンゴの中に指定した数値があれば、その場所を返す。無ければnullを返す。
    */
-  private findPosByNumber(num:number) 
+  private findPosByNumber(num:number) : ICoord | null
   {
     if (!this.isEnabled) return null;
 
@@ -173,7 +179,7 @@ class Bingo
   /**
    * ビンゴがクリアになってるかどうかを判定して、結果を返す。
    */
-  public get isClear() 
+  public get isClear() :boolean
   {
     if (!this.isEnabled) return false;
 
@@ -187,7 +193,7 @@ class Bingo
   /**
    * 横方向のビンゴ判定、privateだしIsEnableで判定するのは省いちゃっていいかなー
    */
-  private get isClearHorizontal() 
+  private get isClearHorizontal() :boolean
   {
     for(let y = 0; y < this.size; y++) {
       for(let x = 0; x < this.size; x++) 
@@ -207,7 +213,7 @@ class Bingo
   /**
    * 縦方向のビンゴ判定、privateだしIsEnableで判定するのは省いちゃっていいかなー
    */
-  private get isClearVertical() 
+  private get isClearVertical() :boolean
   {
     for(let x = 0; x < this.size; x++) {
       for(let y = 0; y < this.size; y++) 
@@ -227,7 +233,7 @@ class Bingo
   /**
    * 斜め方向のビンゴ判定、privateだしIsEnableで判定するのは省いちゃっていいかなー
    */
-  private get isClearCross() 
+  private get isClearCross() :boolean
   {
     // 左上から右下にかけてのチェック
     for(let i = 0; i < this.size; i++) 
