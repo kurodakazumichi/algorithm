@@ -7,6 +7,8 @@ yarnを使っているけどnpmでもいけると思うよ。
 yarn init
 # typescriptとts-nodeを入れる
 yarn add typescript ts-node
+# node.d.tsを入れる
+yarn add -D @types/node@12
 # tsconfig.jsonを作る
 yarn tsc --init
 ```
