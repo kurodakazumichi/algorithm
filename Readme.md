@@ -1,6 +1,12 @@
-# 環境構築
+# 開発環境について
+以下の環境で作成しています。
 
-yarnを使っているけどnpmでもいけると思うよ。
+- Node.js v12.18.2
+- yarn 1.22.4
+
+パッケージ管理にyarnを利用していますが、npmでも動作すると思います。
+
+# 環境構築
 
 ```
 # プロジェクトの準備
@@ -17,5 +23,8 @@ yarn tsc --init
 
 ```
 # yarn ts-node [実行したいファイルのパス]
-yarn ts-node ./main.ts
+yarn ts-node src/Basic/Array1D/sample01.ts
+
+# yarn start [実行したいファイルのパス]
+yarn start src/Basic/Array1D/sample01.ts
 ```
