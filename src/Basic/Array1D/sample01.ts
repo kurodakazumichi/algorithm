@@ -50,5 +50,6 @@ function avg(array:number[]) : number
   return sum / count;
 }
 
+// 合計と平均を表示
 console.log("sum=", sum(points));
 console.log("avg=", avg(points));
