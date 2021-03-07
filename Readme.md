@@ -35,7 +35,9 @@ yarn start src/Basic/Array1D/sample01.ts
 
 - 合計と平均 (sample01.ts)
 - 合計と配列操作 (sample02.ts)
+- 配列の初期値 (sample03.ts)
 
 ## `src/Basic/Array2D`
 
 - 平均と2次元配列の扱い (sample01.ts)
+- 配列の初期化 (sample02.ts)
