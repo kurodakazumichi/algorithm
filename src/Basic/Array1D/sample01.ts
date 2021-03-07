@@ -2,22 +2,13 @@
  * テストの合計点と平均点を求める
  */
 
+ namespace Array1D {
  /**
   * テスト10回分の点数を格納するための配列として、要素10個の配列を用意。
   */
- const points:number[] = new Array(10);
-
- // 配列に適当な点数を入れる。
- points[0] = 90;
- points[1] = 85;
- points[2] = 95;
- points[3] = 75;
- points[4] = 70;
- points[5] = 85;
- points[6] = 90;
- points[7] = 78;
- points[8] = 85;
- points[9] = 95;
+ const points:number[] = [
+  90, 85, 95, 75, 70, 85, 90, 78, 85, 95,
+ ];
  
 /**
  * 合計を求めるアルゴリズム
@@ -53,3 +44,5 @@ function avg(array:number[]) : number
 // 合計と平均を表示
 console.log("sum=", sum(points));
 console.log("avg=", avg(points));
+
+}
