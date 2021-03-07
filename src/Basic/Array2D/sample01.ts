@@ -52,5 +52,4 @@ function avg(array:number[]) : number
 }
 
 calcAvgs(scores, avgs);
-
 console.log(avgs);
