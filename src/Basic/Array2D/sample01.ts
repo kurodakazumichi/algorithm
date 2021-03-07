@@ -7,6 +7,7 @@
  * 
  * 例えばarray[0][0]と指定した場合は第一回目のテスト、出席番号1番のテストの得点を指す。
  */
+namespace Basic.Array2D {
 
 // 得点の入った2次元配列
 const scores:number[][] = [
@@ -53,3 +54,6 @@ function avg(array:number[]) : number
 
 calcAvgs(scores, avgs);
 console.log(avgs);
+
+}
+

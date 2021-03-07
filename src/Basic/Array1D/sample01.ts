@@ -2,7 +2,7 @@
  * テストの合計点と平均点を求める
  */
 
- namespace Array1D {
+ namespace Basic.Array1D {
  /**
   * テスト10回分の点数を格納するための配列として、要素10個の配列を用意。
   */

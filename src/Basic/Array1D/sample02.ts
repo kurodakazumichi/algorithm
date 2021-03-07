@@ -2,6 +2,7 @@
  * 1月～12月の売上が格納された配列がある、各月の合計額を同じ配列の最後の要素に格納する
  * ※あまりこういった処理はしないと思うがテキストにあるので一応やる
  */
+namespace Basic.Array1D {
 
 // 12ヵ月分+合計額の13要素を格納できる配列を準備
 const sales: number[] = [
@@ -26,3 +27,5 @@ function calc(array:number[])
 // 12ヵ月分の合計額を売上配列の末尾に追加
 calc(sales);
 console.log(sales);
+
+}
