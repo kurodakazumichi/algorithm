@@ -41,3 +41,9 @@ yarn start src/Basic/Array1D/sample01.ts
 
 - 平均と2次元配列の扱い (sample01.ts)
 - 配列の初期化 (sample02.ts)
+
+## `src/Basic/03_Search`
+
+- 線形探索法(シーケンシャルサーチ) (01_linear.ts)
+- 線形探索例 値引き率の検索 (02_linear.ts)
+- 番兵法 (03_sentinel.ts)
